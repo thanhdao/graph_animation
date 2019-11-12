@@ -30,44 +30,24 @@ function render() {
 }
 
 var dots = [
-    ['digraph K {',
-        'main -> parse -> execute',
-        'main -> init',
-        'main -> cleanup',
-        'execute -> make_string;',
-        'execute -> printf',
-        'init -> make_string;',
-        'main -> printf;',
-        'execute -> compare;',
-        '}'
+    
+    ['digraph G {',
+            'size = "4,4";',
+            'main [shape=box];',
+            'main -> parse [weight=8];',
+            'parse -> execute;',
+            'main -> init [style=dotted];',
+            'main -> cleanup;',
+            'execute -> { make_string; printf}',
+            'init -> make_string;',
+            'edge [color=red];',
+            'main -> printf [style=bold, label="100 times"]',
+            'make_string [label="make a \nstring"];',
+            'node [shape=box, style=filled, color=".7 .3 1.0"];',
+            'execute -> compare;',
+            '}'
     ],
-    ['digraph G {'
-        'size = "4,4"',
-        'main [shape=box]',
-        'main -> parse [weight=8]',
-        'parse -> execute',
-        'main -> init [style=dotted]',
-        'main -> cleanup',
-        'execute -> { make_string; printf}',
-        'init -> make_string',
-        'edge [color=red]',
-        'main -> printf [style=bold, label="100 times]',
-        'make_string [label="make a \nstring"]',
-        'node [shape=box, style=filled, color=".7 .3 1.0"]',
-        'execute -> compare',
-        '}'
-    ],
-    ['graph {',
-          'a -- b[color=red,penwidth=3.0]',
-          'b -- c',
-          'c -- d[color=red,penwidth=3.0]',
-          'd -- e',
-          'e -- f',
-          'a -- d',
-          'b -- d[color=red,penwidth=3.0]',
-          'c -- f[color=red,penwidth=3.0]',
-        '}'
-    ],
+    
     [
         'digraph  {',
         '    node [style="filled"]',
